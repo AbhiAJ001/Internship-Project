@@ -1,5 +1,4 @@
-# train_model.py
-
+# Import Libraries 
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -55,4 +54,4 @@ with open("model/scaler.pkl", "wb") as f:
 with open("model/encoder.pkl", "wb") as f:
     pickle.dump(encoders, f)
 
-print("Model training complete. Files saved to 'model/' directory.")
+print("Model training complete.")
