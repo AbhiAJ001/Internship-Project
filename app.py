@@ -4,7 +4,7 @@ import numpy as np
 import pickle
 import os
 
-# === Load model and preprocessing tools ===
+# Load model and preprocessing tools 
 model_path = os.path.join("model", "churn_model.pkl")
 scaler_path = os.path.join("model", "scaler.pkl")
 encoder_path = os.path.join("model", "encoder.pkl")
@@ -13,12 +13,12 @@ model = pickle.load(open(model_path, "rb"))
 scaler = pickle.load(open(scaler_path, "rb"))
 encoders = pickle.load(open(encoder_path, "rb"))
 
-# === Streamlit UI ===
+# Streamlit UI
 st.set_page_config(page_title="Customer Churn Prediction")
 st.title("Customer Churn Prediction App")
 st.sidebar.header("Enter Customer Details")
 
-# === Collect user inputs ===
+# Collect user inputs
 gender = st.sidebar.selectbox("Gender", ["Female", "Male"])
 partner = st.sidebar.selectbox("Partner", ["Yes", "No"])
 internet = st.sidebar.selectbox("Internet Service", ["DSL", "Fiber optic", "No"])
@@ -27,7 +27,7 @@ tenure = st.sidebar.slider("Tenure (months)", 0, 72, 12)
 monthly = st.sidebar.number_input("Monthly Charges", 0.0, 200.0, 70.0)
 total = st.sidebar.number_input("Total Charges", 0.0, 10000.0, 1500.0)
 
-# === Prediction logic ===
+# Prediction logic
 if st.sidebar.button("Predict"):
     try:
         # Encode categorical fields
